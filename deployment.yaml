@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: esp-sample-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: esp-sample-app
+    spec:
+      containers:
+      - name: app
+        image: gcr.io/cloud-solutions-group/esp-sample-app:1.0.0
+        ports:
+          - containerPort: 8080
+        readinessProbe:
+          httpGet:
+            host: "{{ENDPOINT}}"
+            path: /_gcp_iap/identity
+            port: 443
+            scheme: HTTPS
+          periodSeconds: 10
+          timeoutSeconds: 5
+          successThreshold: 1
+          failureThreshold: 2
