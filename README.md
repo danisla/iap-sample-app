@@ -1,4 +1,4 @@
-# ESP Sample App
+# IAP Sample App
 
 Displays the email address of the logged in user from the value of the `x-goog-authenticated-user-email` header inserted by the Identity-Aware Proxy.
 

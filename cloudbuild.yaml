@@ -1,5 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-f', 'Dockerfile', '-t', 'gcr.io/$PROJECT_ID/esp-sample-app:1.0.0', '.' ]
+  args: [ 'build', '-f', 'Dockerfile', '-t', 'gcr.io/$PROJECT_ID/iap-sample-app:1.0.0', '.' ]
 images:
-- 'gcr.io/$PROJECT_ID/esp-sample-app:1.0.0'
+- 'gcr.io/$PROJECT_ID/iap-sample-app:1.0.0'

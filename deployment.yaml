@@ -1,17 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: esp-sample-app
+  name: iap-sample-app
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: esp-sample-app
+        app: iap-sample-app
     spec:
       containers:
       - name: app
-        image: gcr.io/cloud-solutions-group/esp-sample-app:1.0.0
+        image: gcr.io/cloud-solutions-group/iap-sample-app:1.0.0
         ports:
           - containerPort: 8080
         readinessProbe:
